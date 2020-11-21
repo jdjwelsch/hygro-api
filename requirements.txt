@@ -1,0 +1,3 @@
+fastapi==0.61.2
+pigpio==1.78
+uvicorn==0.12.2
