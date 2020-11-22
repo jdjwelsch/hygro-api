@@ -1,3 +1,5 @@
+from typing import Dict
+
 import DHT22
 import pigpio
 import time
@@ -34,10 +36,10 @@ app = FastAPI()
 
 
 @app.get('/temperature')
-def read_temp() -> float:
+def read_temp() -> Dict[str, float]:
     return {'temperature': sensor.temperature}
 
 
 @app.get('/humidity')
-def read_humidity() -> float:
+def read_humidity() -> Dict[str, float]:
     return {'humidity': sensor.humidity}
