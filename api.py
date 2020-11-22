@@ -39,5 +39,5 @@ def read_temp() -> float:
 
 
 @app.get('/humidity')
-def read_temp() -> float:
+def read_humidity() -> float:
     return {'humidity': sensor.humidity}
