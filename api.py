@@ -36,10 +36,10 @@ app = FastAPI()
 
 
 @app.get('/temperature')
-def read_temp() -> Dict[str, float]:
-    return {'temperature': sensor.temperature}
+def read_temp(offset: float = 0.0) -> Dict[str, float]:
+    return {'temperature': sensor.temperature + offset}
 
 
 @app.get('/humidity')
-def read_humidity() -> Dict[str, float]:
-    return {'humidity': sensor.humidity}
+def read_humidity(offset: float = 0.0) -> Dict[str, float]:
+    return {'humidity': sensor.humidity + offset}
